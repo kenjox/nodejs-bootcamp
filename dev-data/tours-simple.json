@@ -219,5 +219,69 @@
     "maxGroupSize": 5,
     "difficulty": "difficult",
     "id": 10
+  },
+  {
+    "name": "Visiting Kalahari desert",
+    "duration": 80,
+    "maxGroupSize": 5,
+    "difficulty": "difficult",
+    "id": 11
+  },
+  {
+    "name": "Visiting Kalahari desert",
+    "duration": 80,
+    "maxGroupSize": 5,
+    "difficulty": "difficult",
+    "id": 12
+  },
+  {
+    "name": "Visiting Kalahari desert",
+    "duration": 80,
+    "maxGroupSize": 5,
+    "difficulty": "difficult",
+    "id": 13
+  },
+  {
+    "name": "Visiting Kalahari desert",
+    "duration": 80,
+    "maxGroupSize": 5,
+    "difficulty": "difficult",
+    "id": 14
+  },
+  {
+    "name": "Visiting Kalahari desert",
+    "duration": 80,
+    "maxGroupSize": 5,
+    "difficulty": "difficult",
+    "id": 15
+  },
+  {
+    "name": "Visiting Kalahari desert",
+    "duration": 80,
+    "maxGroupSize": 5,
+    "difficulty": "difficult",
+    "id": 16
+  },
+  {
+    "name": "Visiting Kalahari desert",
+    "duration": 80,
+    "maxGroupSize": 5,
+    "difficulty": "difficult",
+    "id": 17
+  },
+  {
+    "name": "Visiting Kalahari desert",
+    "duration": 80,
+    "maxGroupSize": 5,
+    "difficulty": "difficult",
+    "id": 18
+  },
+  {
+    "name": "Visiting Kalahari desert",
+    "duration": 80,
+    "maxGroupSize": 5,
+    "difficulty": "difficult",
+    "price": 2000,
+    "id": 19
   }
 ]

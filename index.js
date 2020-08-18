@@ -1,7 +1,18 @@
 const http = require('http');
+const mongoose = require('mongoose');
+
 const { app } = require('./src/app');
 
-const PORT = 8001;
+const PORT = process.env.PORT || 5001;
+
+mongoose
+  .connect(process.env.DB_CONNECTION_STRING, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log('Successfully connected to database'));
 
 const server = http.createServer(app);
 
