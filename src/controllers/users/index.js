@@ -1,21 +1,21 @@
-const getAllUsers = (req, res) => {
-  res.status(500).json({
-    status: 'error',
-    message: 'Not implemented',
+const catchAsync = require('../../utils/catch-async');
+const User = require('../../models/user');
+
+const getAllUsers = catchAsync(async (req, res) => {
+  const users = await User.find();
+
+  res.status(200).json({
+    status: 'success',
+    data: users,
   });
-};
+});
 const getUserById = (req, res) => {
   res.status(500).json({
     status: 'error',
     message: 'Not implemented',
   });
 };
-const createUser = (req, res) => {
-  res.status(500).json({
-    status: 'error',
-    message: 'Not implemented',
-  });
-};
+
 const updateUserById = (req, res) => {
   res.status(500).json({
     status: 'error',
@@ -32,7 +32,6 @@ const deleteUserById = (req, res) => {
 module.exports = {
   getAllUsers,
   getUserById,
-  createUser,
   updateUserById,
   deleteUserById,
 };

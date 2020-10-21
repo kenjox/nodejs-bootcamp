@@ -7,6 +7,7 @@ const toursSchema = new mongoose.Schema(
       type: String,
       required: [true, 'A tour must contain name'],
       unique: true,
+      minimum: 5,
     },
     slug: String,
     duration: {
@@ -33,6 +34,7 @@ const toursSchema = new mongoose.Schema(
       type: Number,
       //Custom validator
       validate: {
+        // Only works on SAVE
         validator: function (val) {
           //this only points to newly created document
           return val < this.price;

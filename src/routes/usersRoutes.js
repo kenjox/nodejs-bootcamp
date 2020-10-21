@@ -8,9 +8,14 @@ const {
   deleteUserById,
 } = require('../controllers/users');
 
+const { signup, signin } = require('../controllers/auth/auth');
+
 const usersRouter = express.Router();
 
-usersRouter.route('/').get(getAllUsers).post(createUser);
+usersRouter.post('/signup', signup);
+usersRouter.post('/signin', signin);
+
+usersRouter.route('/').get(getAllUsers);
 usersRouter
   .route('/:id')
   .get(getUserById)

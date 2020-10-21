@@ -1,4 +1,5 @@
 const express = require('express');
+const authController = require('../controllers/auth/auth');
 
 const {
   createNewTour,
@@ -10,7 +11,7 @@ const {
 
 const router = express.Router();
 
-router.route('/').get(getAllTours).post(createNewTour);
+router.route('/').get(authController.protect, getAllTours).post(createNewTour);
 router
   .route('/:id')
   .get(getTourById)
