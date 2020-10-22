@@ -64,7 +64,7 @@ const updateTourById = catchAsync(async (req, res, next) => {
 
 const deleteTourById = catchAsync(async (req, res, next) => {
   const tourId = req.params.id;
-  const tour = await Tour.findByIdAndDelete();
+  const tour = await Tour.findByIdAndDelete(tourId);
 
   if (!tour) {
     return next(

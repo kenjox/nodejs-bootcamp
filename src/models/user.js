@@ -32,6 +32,10 @@ const userSchema = new mongoose.Schema({
     },
   },
   passwordChangedAt: Date,
+  role: {
+    type: String,
+    enum: ['user', 'guide', 'lead-guide', 'admin'],
+  },
 });
 
 userSchema.pre('save', async function (req, res, next) {

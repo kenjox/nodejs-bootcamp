@@ -19,6 +19,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     password,
     passwordConfirm,
     passwordChangedAt,
+    role,
   } = req.body;
 
   const user = await User.create({
@@ -27,6 +28,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     password,
     passwordConfirm,
     passwordChangedAt,
+    role,
   });
 
   const token = signInToken(user._id);
@@ -95,6 +97,21 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
 
   //Grant user access
+  req.user = user;
 
   next();
 });
+
+exports.restrictTo = (...roles) => {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return next(
+        new AppErrorHandler(
+          'You do not have permission to perform this operation',
+          403
+        )
+      );
+    }
+    next();
+  };
+};
